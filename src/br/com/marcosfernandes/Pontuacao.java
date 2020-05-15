@@ -26,6 +26,23 @@ public class Pontuacao {
 		System.out.print("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ");
 		char formaPagamento = sc.next().charAt(0);
 		
+		int pontos, escore;
+		double volumeCompras = ( ticketMedio * quantCompraAno );
+		
+		if ( volumeCompras > 3000 ) {
+			pontos = 60;
+		}
+		else if ( volumeCompras > 0 && volumeCompras <= 3000 && quantCompraAno > 2 ) {
+			pontos = 40;
+		}
+		else if ( volumeCompras > 0 && volumeCompras <= 3000 ) {
+			pontos = 20;
+		}
+		else {
+			pontos = 0;
+		}
+		
+		System.out.print("Score de volume de compras = " + pontos + " pontos");
 		
 		
 		
