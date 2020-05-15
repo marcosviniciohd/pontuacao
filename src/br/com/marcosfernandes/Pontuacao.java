@@ -20,6 +20,13 @@ public class Pontuacao {
 		System.out.print("Qual o ticket médio? ");
 		double ticketMedio = sc.nextDouble();
 		
+		System.out.print("Quantas vezes o cliente atrasou o pagamento? ");
+		int atrasoPagamento = sc.nextInt();
+		
+		System.out.print("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ");
+		char formaPagamento = sc.next().charAt(0);
+		
+		
 		
 		
 		
