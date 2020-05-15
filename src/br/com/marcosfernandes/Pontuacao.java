@@ -14,7 +14,11 @@ public class Pontuacao {
 		System.out.println("-------------------------------- ");
 		System.out.println("INFORME OS DADOS DO ÚLTIMO ANO ");
 		
+		System.out.print("Quantas compras o cliente fez no último ano? ");
+		int quantCompraAno = sc.nextInt();
 		
+		System.out.print("Qual o ticket médio? ");
+		double ticketMedio = sc.nextDouble();
 		
 		
 		
