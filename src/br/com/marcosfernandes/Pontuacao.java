@@ -3,6 +3,8 @@ package br.com.marcosfernandes;
 import java.util.Locale;
 import java.util.Scanner;
 
+import com.sun.source.tree.Scope;
+
 public class Pontuacao {
 
 	public static void main(String[] args) {
@@ -28,6 +30,7 @@ public class Pontuacao {
 		
 		int pontos, escore, pontosInad;
 		int pontosFormPag = 0;
+		String cliente;
 		double volumeCompras = ( ticketMedio * quantCompraAno );
 		
 		if ( volumeCompras > 3000 ) {
@@ -61,8 +64,17 @@ public class Pontuacao {
 		}
 		System.out.println("Score de forma de pagamento " + pontosFormPag + " pontos");
 		
+		escore = ( pontos + pontosInad + pontosFormPag );
 		
+		if (escore > 75) {
+			cliente = "OURO";
+		}else if (escore > 25 && escore <= 75) {
+			cliente = "PRATA";
+		}else {
+			cliente = "BRONZE";
+		}
 		
+		System.out.println("Classificação final = " + cliente );
 		sc.close();
 		
 	}
