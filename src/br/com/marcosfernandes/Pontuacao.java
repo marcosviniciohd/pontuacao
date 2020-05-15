@@ -26,7 +26,8 @@ public class Pontuacao {
 		System.out.print("A maioria das compras foi em dinheiro, cartão, ou boleto (D/C/B)? ");
 		char formaPagamento = sc.next().charAt(0);
 		
-		int pontos, escore;
+		int pontos, escore, pontosInad;
+		int pontosFormPag = 0;
 		double volumeCompras = ( ticketMedio * quantCompraAno );
 		
 		if ( volumeCompras > 3000 ) {
@@ -42,8 +43,23 @@ public class Pontuacao {
 			pontos = 0;
 		}
 		
-		System.out.print("Score de volume de compras = " + pontos + " pontos");
+		System.out.println("Score de volume de compras = " + pontos + " pontos");
 		
+		if (atrasoPagamento == 0 && quantCompraAno > 0) {
+			pontosInad = 30;
+		}else if (quantCompraAno > 0 && atrasoPagamento > 0) {
+			pontosInad = 15;
+		}else {
+			pontosInad = 0;
+		}
+		System.out.println("Score de inadimplência = " + pontosInad + " pontos");
+		
+		if (formaPagamento == 'C' && quantCompraAno > 0) {
+			pontosFormPag = 10;
+		}else if (formaPagamento == 'D' && quantCompraAno > 0) {
+			pontosFormPag = 5;
+		}
+		System.out.println("Score de forma de pagamento " + pontosFormPag + " pontos");
 		
 		
 		
